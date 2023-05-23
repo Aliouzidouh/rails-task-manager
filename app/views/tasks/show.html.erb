@@ -1,0 +1,19 @@
+<h1><%= @task.title %></h1>
+<br>
+<%= link_to "edit this task", edit_path %>
+<br>
+<br>
+
+
+<input type="checkbox" id="done" name="done" <%= @task.completed ? "checked" : ""%>>
+<label for="done"><%=@task.details%></label>
+<br>
+<br>
+
+<%= link_to "Back To list", tasks_path %>
+
+
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
